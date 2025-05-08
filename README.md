@@ -23,7 +23,7 @@ RFQ Analyzer is a data analytics tool built with Python, Power BI, and machine l
 ## 🛠 Tech Stack
 
 - **Python**: Data processing, modeling, and scheduling
-- **Power BI**: KPI and trend visualization
+- **Power BI**: Interactive dashboards for RFQ trends, factory performance, sales analysis, customer insights, and win rate predictions
 - **Random Forest (scikit-learn)**: Predictive modeling
 - **Power Query**: Data transformation in Power BI
 - **APScheduler**: Scheduling periodic ETL jobs
