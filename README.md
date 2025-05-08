@@ -31,6 +31,7 @@ RFQ Analyzer is a data analytics tool built with Python, Power BI, and machine l
 ---
 
 ## 📂 Project Structure
+```
 rfq_analyzer/
 ├─ main.py # Main script to run the pipeline
 ├─ data/
@@ -51,10 +52,10 @@ rfq_analyzer/
 │ ├─ factory_analysis.py # Factory performance evaluation
 │ ├─ ml_model.py # Model training & prediction
 │ ├─ sales_rep_analysis.py # Sales rep effectiveness
-
+```
 
 ## 🤖 Machine Learning
-The tool uses a Random Forest Regression model (model/best_model.pkl) trained on historical RFQ outcomes to estimate the probability of winning new RFQs. Features include customer, factory, pricing, and historical win rates.
+The tool uses a Random Forest Regression model (model/best_model.pkl) trained on historical RFQ outcomes to estimate the probability of winning new RFQs. Features include customer, factory, and historical win rates.
 
 ## 📈 Dashboards
 Power BI dashboards built on the output data include:
