@@ -25,26 +25,26 @@ def add_FactoryQuoteRespone(df, rfq_fac):
     df = df.merge(rfq_fac, on ='RFQID', how='left')
     merged_df_order =['RFQID', 'Customer', 'Year', 'Sales Rep', 'FactoryUsed', 'ResultCode', 'FactorySubmittedQuote', 'FactoryQuoteRespone']
     df = df[merged_df_order]
-
-    # Split the rows where there's a comma and then explode the resulting lists into separate rows
-    df['FactoryUsed'] = df['FactoryUsed'].str.split(';')
-
-    # Explode the lists into individual rows
-    df = df.explode('FactoryUsed', ignore_index=True)
     df = df.fillna('Blanks')
     return df
 
 
 
 # Generate all mock datasets
-rfq = generate_rfq_data()
-rfq_fac = generate_rfq_to_factory()
-rfq_q_submit = generate_rfq_quote_submit()
+# rfq = generate_rfq_data()
+# rfq_fac = generate_rfq_to_factory()
+# rfq_q_submit = generate_rfq_quote_submit()
 
 
-rfq.to_excel('data/rfq.xlsx', index=False)
-rfq_fac.to_excel('data/rfq_fac.xlsx', index=False)
-rfq_q_submit.to_excel('data/rfq_q_submit.xlsx', index=False)
+# rfq.to_excel('data/rfq.xlsx', index=False)
+# rfq_fac.to_excel('data/rfq_fac.xlsx', index=False)
+# rfq_q_submit.to_excel('data/rfq_q_submit.xlsx', index=False)
+
+import pandas as pd
+rfq = pd.read_excel('rfq.xlsx')
+rfq_fac = pd.read_excel('rfq_fac.xlsx')
+rfq_q_submit = pd.read_excel('rfq_q_submit.xlsx')
+
 
 # Clean rfq
 rfq = clean_rfq_1(rfq)
@@ -69,6 +69,12 @@ merged_df = add_FactoryQuoteRespone(rfq2, rfq_fac)
 # Add max won amount
 rfq_won = add_won_amount(merged_df, rfq_q_submit)
 rfq_won.to_excel('outputs/raw/Awarded_Amount_List.xlsx', index=False)
+
+# Split the rows where there's a comma and then explode the resulting lists into separate rows
+merged_df['FactoryUsed'] = merged_df['FactoryUsed'].str.split(';')
+
+# Explode the lists into individual rows
+merged_df = merged_df.explode('FactoryUsed', ignore_index=True)
 
 # RFQ analysis by factory
 factory_ana = factory_analysis(merged_df)
@@ -106,4 +112,3 @@ sales_analysis(merged_df, rfq_won, cus_number_by_sales_by_year, customer_to_sale
 
 # Win Rate Predictions
 win_rate_model(cus_n_fac)
-# %%
