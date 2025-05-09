@@ -20,6 +20,7 @@ def clean_rfq_1(df):
     df = df.drop(columns=['Original Quote Date', 'Material', 'Email', 'Original RFQ Date', 'RFQ Due Date', 'TotalAmount'])
     return df
 
+
 # Add new sales rep to the RFQ table
 def clean_rfq_2(df, customer_to_sales):
     df = df.drop(columns=['Sales Rep'])

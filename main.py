@@ -28,26 +28,24 @@ def add_FactoryQuoteRespone(df, rfq_fac):
     df = df.fillna('Blanks')
     return df
 
-
+def customer_list_2024(df):
+    df_columns = ['Customer', 'Year', 'Sales Rep']
+    df = df[df_columns]
+    df = df[df['Year'] == 2024]
+    df = df.groupby(['Year', 'Sales Rep'])['Customer'].nunique().reset_index(name='Number of Customers')
+    df.to_excel('outputs/raw/Number_of_Customers_2024.xlsx', index=False)
 
 # Generate all mock datasets
-# rfq = generate_rfq_data()
-# rfq_fac = generate_rfq_to_factory()
-# rfq_q_submit = generate_rfq_quote_submit()
-
-
-# rfq.to_excel('data/rfq.xlsx', index=False)
-# rfq_fac.to_excel('data/rfq_fac.xlsx', index=False)
-# rfq_q_submit.to_excel('data/rfq_q_submit.xlsx', index=False)
-
-import pandas as pd
-rfq = pd.read_excel('rfq.xlsx')
-rfq_fac = pd.read_excel('rfq_fac.xlsx')
-rfq_q_submit = pd.read_excel('rfq_q_submit.xlsx')
-
+rfq = generate_rfq_data()
+rfq_fac = generate_rfq_to_factory()
+rfq_q_submit = generate_rfq_quote_submit()
 
 # Clean rfq
 rfq = clean_rfq_1(rfq)
+
+# Customer list 2024
+rfq_2024 = rfq.copy()
+customer_list_2024(rfq_2024)
 
 # Update the sales rep for each customer
 customer_to_sales = rfq.copy()
@@ -112,3 +110,4 @@ sales_analysis(merged_df, rfq_won, cus_number_by_sales_by_year, customer_to_sale
 
 # Win Rate Predictions
 win_rate_model(cus_n_fac)
+
