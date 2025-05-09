@@ -42,18 +42,18 @@ rfq_analyzer/
 ├─ model/
 │ ├─ best_model.pkl # Trained Random Forest model
 ├─ outputs/
-│ ├─ format_customer_excel.py # Formats customer reports
-│ ├─ format_factory_excel.py # Formats factory reports
-│ ├─ formatted/ # Final output Excel files
-│ ├─ raw/ # Intermediate analytics reports
+│ ├─ format_customer_excel.py
+│ ├─ format_factory_excel.py
+│ ├─ formatted/
+│ ├─ raw/
 ├─ processing/
-│ ├─ calculate_won_amount.py # Calculates awarded amounts
-│ ├─ clean_rfq.py # Data cleaning routines
-│ ├─ customer_analysis.py # Customer behavior analysis
-│ ├─ customer_factory_analysis.py # Combined customer-factory metrics
-│ ├─ factory_analysis.py # Factory performance evaluation
-│ ├─ ml_model.py # Model training & prediction
-│ ├─ sales_rep_analysis.py # Sales rep effectiveness
+│ ├─ calculate_won_amount.py
+│ ├─ clean_rfq.py
+│ ├─ customer_analysis.py
+│ ├─ customer_factory_analysis.py
+│ ├─ factory_analysis.py
+│ ├─ ml_model.py
+│ ├─ sales_rep_analysis.py
 ```
 
 ## 🤖 Machine Learning
