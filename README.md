@@ -13,7 +13,7 @@ RFQ Analyzer is a data analytics tool built with Python, Power BI, and machine l
   Uses a trained Random Forest Regressor to predict RFQ win probabilities, aiding in strategic planning.
 
 - 📊 **Interactive Dashboards (Power BI)**  
-  Visualizes trends in customer behavior, factory efficiency, and sales rep performance.
+  Visualizes trends in customer insights, factory performance, and sales rep analysis.
 
 - 📁 **Rich Excel Reporting**  
   Generates formatted Excel reports by customer, factory, and sales rep.
@@ -34,6 +34,8 @@ RFQ Analyzer is a data analytics tool built with Python, Power BI, and machine l
 ```
 rfq_analyzer/
 ├─ main.py # Main script to run the pipeline
+├─ RFQ_Analysis_PowerBI_Manual.pdf
+├─ README.md
 ├─ data/
 │ ├─ database_loader.py # Loads data from Access DB
 │ ├─ mock_generator.py # For testing/demo purposes
