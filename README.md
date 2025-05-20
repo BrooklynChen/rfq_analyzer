@@ -6,16 +6,16 @@ RFQ Analyzer is a data analytics tool built with Python, Power BI, and machine l
 
 ## 🚀 Features
 
-- ✅ **Automated ETL Pipeline**  
+-  **Automated ETL Pipeline**  
   Automates the ingestion and cleaning of over 5,000 RFQ records from a Microsoft Access database using `Python` and `APScheduler`.
 
-- 📈 **Predictive Modeling**  
+-  **Predictive Modeling**  
   Uses a trained Random Forest Regressor to predict RFQ win probabilities, aiding in strategic planning.
 
-- 📊 **Interactive Dashboards (Power BI)**  
+-  **Interactive Dashboards (Power BI)**  
   Visualizes trends in customer insights, factory performance, and sales rep analysis.
 
-- 📁 **Rich Excel Reporting**  
+-  **Rich Excel Reporting**  
   Generates formatted Excel reports by customer, factory, and sales rep.
 
 ---
@@ -56,8 +56,12 @@ rfq_analyzer/
 │ ├─ sales_rep_analysis.py
 ```
 
+---
+
 ## 🤖 Machine Learning
 The tool uses a Random Forest Regression model (model/best_model.pkl) trained on historical RFQ outcomes to estimate the probability of winning new RFQs. Features include customer, factory, and historical win rates.
+
+---
 
 ## 📈 Dashboards
 Power BI dashboards built on the output data include:
