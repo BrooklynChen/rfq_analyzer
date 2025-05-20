@@ -38,22 +38,22 @@ rfq_analyzer/
 ├─ README.md
 ├─ data/
 │ ├─ database_loader.py # Loads data from Access DB
-│ ├─ mock_generator.py # For testing/demo purposes
+│ └─ mock_generator.py # For testing/demo purposes
 ├─ model/
-│ ├─ best_model.pkl # Trained Random Forest model
+│ └─ best_model.pkl # Trained Random Forest model
 ├─ outputs/
 │ ├─ format_customer_excel.py
 │ ├─ format_factory_excel.py
 │ ├─ formatted/
-│ ├─ raw/
-├─ processing/
-│ ├─ calculate_won_amount.py
-│ ├─ clean_rfq.py
-│ ├─ customer_analysis.py
-│ ├─ customer_factory_analysis.py
-│ ├─ factory_analysis.py
-│ ├─ ml_model.py
-│ ├─ sales_rep_analysis.py
+│ └─ raw/
+└─ processing/
+  ├─ calculate_won_amount.py
+  ├─ clean_rfq.py
+  ├─ customer_analysis.py
+  ├─ customer_factory_analysis.py
+  ├─ factory_analysis.py
+  ├─ ml_model.py
+  └─ sales_rep_analysis.py
 ```
 
 ---
@@ -72,6 +72,8 @@ Power BI dashboards built on the output data include:
 - 2025 RFQ Overview
 - Historical Average Win Rate
 - Predicted Win Rate
+
+---
 
 ## 📅 Scheduling
 The ETL pipeline is scheduled via APScheduler to run at regular intervals.
