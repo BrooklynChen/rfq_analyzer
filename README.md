@@ -33,19 +33,23 @@ RFQ Analyzer is a data analytics tool built with Python, Power BI, and machine l
 ## 📂 Project Structure
 ```
 rfq_analyzer/
-├─ main.py # Main script to run the pipeline
+├─ main.py                           # Main script to run the pipeline
 ├─ RFQ_Analysis_PowerBI_Manual.pdf
 ├─ README.md
+│
 ├─ data/
-│ ├─ database_loader.py # Loads data from Access DB
-│ └─ mock_generator.py # For testing/demo purposes
+│ ├─ database_loader.py              # Loads data from Access DB
+│ └─ mock_generator.py               # For testing/demo purposes
+│
 ├─ model/
-│ └─ best_model.pkl # Trained Random Forest model
+│ └─ best_model.pkl                  # Trained Random Forest model
+│
 ├─ outputs/
 │ ├─ format_customer_excel.py
 │ ├─ format_factory_excel.py
 │ ├─ formatted/
 │ └─ raw/
+│
 └─ processing/
   ├─ calculate_won_amount.py
   ├─ clean_rfq.py
